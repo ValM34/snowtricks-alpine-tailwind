@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter une catégorie
+{% endblock %}
+
+{% block body %}
+
+	{% if app.user %}
+		<div class="base-container">
+      <div class="form-container">
+        <div class="form-subcontainer">
+            {{ form_start(CreationCategoryForm) }}
+            {{ form_widget(CreationCategoryForm) }}
+              <button type="submit" class="btn">Valider</button>
+            {{ form_end(CreationCategoryForm) }}
+        </div>
+      </div>
+    </div>
+	{% else %}
+		<div class="base-container">
+      Veuillez vous connecter pour pouvoir ajouter une nouvelle catégorie : <a class="primary" href="{{ path('login') }}">Connexion</a>
+    </div>
+	{% endif %}
+
+{% endblock %}
